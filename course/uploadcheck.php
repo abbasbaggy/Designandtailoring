@@ -8,7 +8,7 @@
 if (($_FILES['file']['name']!="")){
 // Where the file is going to be stored
     $target_dir = "upload/";
-    $file = $_FILES['file']['name'];
+    $file = $_FILES['file.']['name'];
     $path = pathinfo($file);
     $filename = $path['filename'];
     $ext = $path['extension'];
