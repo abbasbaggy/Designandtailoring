@@ -47,7 +47,7 @@ if (empty($_POST['new'])){
 ?>
 <?php
 
-include ('dashboard.php');
+include('dashboard.php');
 ?>
 <body>
 <main>

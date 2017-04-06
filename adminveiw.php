@@ -2,12 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: Abbas
- * Date: 3/31/2017
- * Time: 6:19 PM
+ * Date: 4/5/2017
+ * Time: 10:16 AM
  */
 require('db.php');
 include("auth.php");
-include ('dashboard.php')
+include('dashboard.php')
 ?>
 
 <body>
@@ -17,7 +17,7 @@ include ('dashboard.php')
     <table width="100%" border="1" style="border-collapse:collapse;">
         <thead>
         <tr>
-            <th><strong>Order.No</strong></th>
+            <th><strong>S.No</strong></th>
             <th><strong>Burst</strong></th>
             <th><strong>Waist</strong></th>
             <th><strong>Hips</strong></th>
@@ -44,7 +44,7 @@ include ('dashboard.php')
         <?php
         $veiwby =$_SESSION["username"];
         $count=1;
-        $sel_query="Select * from new_record WHERE submittedby = '$veiwby' ORDER BY id desc;";
+        $sel_query="Select * from new_record ORDER BY id desc;";
         $result = mysqli_query($con,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
             <tr><td align="center"><?php echo $count; ?></td>
@@ -67,16 +67,16 @@ include ('dashboard.php')
                 <td align="center"><?php echo $row["outsideleg"]; ?></td>
                 <td align="center"><?php echo $row["insideleg"]; ?></td>
                 <td align="center">
-                    <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
+                    <a href="edit.php?id=<?php echo $row[">Edit</a>
                 </td>
                 <td align="center">
-                    <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                    <a href="course/delete.php?id=<?php echo $row[">Delete</a>
                 </td>
             </tr>
             <?php $count++; } ?>
         </tbody>
     </table>
-</div>
+    </div>
 </main>
 </body>
 </html>

@@ -5,7 +5,7 @@
  * Date: 3/31/2017
  * Time: 6:23 PM
  */
- include ("dashboard.php");
+ include("dashboard.php");
 require('db.php');
 include("auth.php");
 $id=$_REQUEST['id'];
@@ -18,7 +18,7 @@ $row = mysqli_fetch_assoc($result);
 
     <h1>Update Record</h1>
     <?php
-    require ('db.php');
+    require('db.php');
     $status = "";
     if(isset($_POST['new']) && $_POST['new']==1)
     {
