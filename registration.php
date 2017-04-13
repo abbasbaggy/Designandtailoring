@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<?php
+<?php    ini_set('display_errors', 1);
 require('db.php');
 // If form submitted, insert values into the database.
 if (isset($_REQUEST['username'])){
