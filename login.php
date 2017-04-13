@@ -6,10 +6,7 @@
  * Time: 3:03 PM
  */
 
-/*
-Author: Javed Ur Rehman
-Website: http://www.allphptricks.com/
-*/
+
 ?>
 <!DOCTYPE html>
 <html>
