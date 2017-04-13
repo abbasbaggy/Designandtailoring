@@ -19,6 +19,7 @@ include('dashboard.php')
         <thead>
         <tr>
             <th>Order.No</th>
+            <th>Order Name</th>
             <th>Burst</th>
             <th>Waist</th>
             <th>Hips</th>
