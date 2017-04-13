@@ -28,13 +28,26 @@ if (isset($_REQUEST['username'])){
     $password = stripslashes($_REQUEST['password']);
     $password = mysqli_real_escape_string($con,$password);
 
-
-    $trn_date = date("Y-m-d H:i:s");
-    $query = "INSERT into `users2` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
-    $result = mysqli_query($con,$query);
-    if($result){
-        echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+if ( !filter_var($email,FILTER_VALIDATE_EMAIL)) {
+    $error = true;
+    $emailError = "Please enter valid email address.";
+} else {
+    //check email
+    $sql_query = "SELECT userEmail FROM users WHERE userEmail ='$email'";
+    $result = $link->query($sql_query);
+    $count = $result->num_rows;
+    if($count!=0){
+        $error = true;
+        $emailError = "Provided Email is already in use.";
     }
+    if (!$error) {
+        $trn_date = date("Y-m-d H:i:s");
+        $query = "INSERT into `users2` (username, password, email, trn_date) VALUES ('$username', '" . md5($password) . "', '$email', '$trn_date')";
+        $result = mysqli_query($con, $query);
+        if ($result) {
+            echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+        }
+    }}
 }else{
     ?>
     <div class="form">
