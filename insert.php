@@ -1,4 +1,4 @@
-<?php
+<?php  ini_set('display_errors', 1);
 /**
  * Created by PhpStorm.
  * User: Abbas
@@ -9,10 +9,7 @@
 require('db.php');
 include("auth.php");
 $status = "";
-if (empty($_POST['new'])){
-    $php_errormsg= true;
-    $status = "Empty record can not be stored";
-}elseif (!empty($_POST['new'])) {
+
     if (isset($_POST['new']) && $_POST['new'] == 1) {
         $trn_date = date("Y-m-d H:i:s");
         $burst = $_REQUEST['Burst'];
@@ -40,14 +37,14 @@ if (empty($_POST['new'])){
     ('$trn_date','$burst','$waist','$hips','$backWidth','$frontChest','$shoulder','$neck','$sleeve','$underBurst','$wristt','$upperArm','$calf','$ankle','$napeWaist','$waistHip','$shoulderWaist','$outsideLeg','$insideLeg','$submittedby')";
         mysqli_query($con, $ins_query) or die(mysqli_error());
         $status = "New Record Inserted Successfully.
-    </br></br><a href='view.php'>View Inserted Record</a>";
+    </br></br><a href='../../Designandtailoring/css/admin/view.php'>View Inserted Record</a>";
     }
-}
+
 
 ?>
 <?php
 
-include('dashboard.php');
+include ('dashboard.php');
 ?>
 <body>
 <main>
@@ -55,12 +52,19 @@ include('dashboard.php');
 
     <div class="container">
         <h1>Please Enter Your Measurements</h1>
+
         <p style="color:#FF0000;"><?php echo $status; ?></p>
 
         <form class="form-inline" name="form" method="post" action="">
            <div class="form-group">
                <img src="css/measurementchart2.jpg" class="img-thumbnail" width="350" height="275">
-            <input type="hidden" name="new" value="1" />
+
+               <div class="form-group" name="form2" method="" action="">
+                   <label for="rqst">Please Label your order</label>
+                   <input type="text" name="request name" placeholder="order label" required id="rqst">
+               </div>
+
+               <input type="hidden" name="new" value="1" />
 <p>
             <input type="text" name="Burst" placeholder="Enter Burst size "  />
             <input type="text" name="Waist" placeholder="Enter Waist size"  />
@@ -96,8 +100,11 @@ include('dashboard.php');
            </div>
 
         </form>
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" rows="3" id="comment"></textarea>
+        </div>
 
     </div>
 </main>
 </body>
-</html>

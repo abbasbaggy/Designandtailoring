@@ -1,13 +1,12 @@
-<?php
+<?php   ini_set('display_errors', 1);
 /**
  * Created by PhpStorm.
  * User: Abbas
  * Date: 3/31/2017
  * Time: 6:23 PM
  */
- include("dashboard.php");
-require('db.php');
-include("auth.php");
+ include ("dashboard.php");
+
 $id=$_REQUEST['id'];
 $query = "SELECT * from new_record where id='".$id."'";
 $result = mysqli_query($con, $query) or die ( mysqli_error());
@@ -18,9 +17,9 @@ $row = mysqli_fetch_assoc($result);
 
     <h1>Update Record</h1>
     <?php
-    require('db.php');
+    include ("db.php");
     $status = "";
-    if(isset($_POST['new']) && $_POST['new']==1)
+    if(isset($_POST['new']) && $_POST['new'] == 1)
     {
         $id=$_REQUEST['id'];
         $trn_date = date("Y-m-d H:i:s");
@@ -33,7 +32,7 @@ $row = mysqli_fetch_assoc($result);
         $neck = $_REQUEST['neck'];
         $sleeve = $_REQUEST['sleeve'];
         $underBurst = $_REQUEST['underburst'];
-        $wristt = $_REQUEST['wrist'];
+        $wrist = $_REQUEST['wrist'];
         $upperArm = $_REQUEST['upperarm'];
         $calf = $_REQUEST['calf'];
         $ankle = $_REQUEST['ankle'];
@@ -44,10 +43,15 @@ $row = mysqli_fetch_assoc($result);
         $insideLeg = $_REQUEST['insideleg'];
 
         $submittedby = $_SESSION["username"];
-        $update="update new_record set trn_date=`".$trn_date."`,
-burst=`".$burst."`, waist=`".$waist."`,hips=`".$hips."`,bachwidth=`".$backWidth."`,frontchest=`".$frontChest."`,shoulder=`".$shoulder."`,neck=`".$neck."`,sleeve=`".$sleeve."`,underburst=`".$underBurst."`,wrist=`".$wrist."`,upperarm=`".$upperArm."`,calf=`".$calf."`,ankle=`".$ankle."`,napewaist=`".$napeWaist."`,waisthip=`".$waistHip."`,shoulderwaist=`".$shoulderWaist."`,outsideleg=`".$outsideLeg."`,onsideleg=`".$outsideLeg."`,
-submittedby=`".$submittedby."` where id=`".$id."`";
-        mysqli_query($con, $update) or die(mysqli_error());
+        $update="UPDATE new_record 
+SET trn_date='".$trn_date."',
+burst='".$burst."', waist='".$waist."', hips='".$hips."', backwidth='".$backWidth."', frontchest='".$frontChest."',
+shoulder='".$shoulder."', neck='".$neck."', sleeve='".$sleeve."', underburst='".$underBurst."', wrist='".$wrist."',
+upperarm='".$upperArm."', calf='".$calf."', ankle='".$ankle."', napewaist='".$napeWaist."', waisthip='".$waistHip."',
+shoulderwaist='".$shoulderWaist."', outsideleg='".$outsideLeg."', insideleg='".$insideLeg."', 
+submittedby='".$submittedby."'
+ WHERE id='".$id."'";
+        mysqli_query($con, $update) ;//or die(mysqli_error($con));
         $status = "Record Updated Successfully.;
 </br></br><a href='view.php'>View Updated Record</a>";
         echo '<p style="color:#FF0000;">'.$status.'</p>';
@@ -86,7 +90,7 @@ submittedby=`".$submittedby."` where id=`".$id."`";
 
             <p><input type="text" name="ankle" placeholder="Enter ankle"
                       required value="<?php echo $row['ankle'];?>" /></p>
-            <p><input type="text" name="napwaist" placeholder="Enter Nape to waist"
+            <p><input type="text" name="napewaist" placeholder="Enter Nape to waist"
                       required value="<?php echo $row['napewaist'];?>" /></p>
             <p><input type="text" name="waisthip" placeholder="Enter waist to hip"
                       required value="<?php echo $row['waisthip'];?>" /></p>
@@ -97,9 +101,9 @@ submittedby=`".$submittedby."` where id=`".$id."`";
                       required value="<?php echo $row['outsideleg'];?>" /></p>
             <p><input type="text" name="insideleg" placeholder="Enter inside leg"
                       required value="<?php echo $row['insideleg'];?>" /></p>
+
             <p><input name="submit" type="submit" value="Update" /></p>
         </form>
         <?php } ?>
     </div>
 </body>
-</html>

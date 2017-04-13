@@ -1,4 +1,4 @@
-<?php
+<?php    ini_set('display_errors', 1);
 /**
  * Created by PhpStorm.
  * User: Abbas
@@ -9,35 +9,37 @@ require('db.php');
 include("auth.php");
 include('dashboard.php')
 ?>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
 <main>
 
+    <div class="left">
     <h2>View Records</h2>
-    <table width="100%" border="1" style="border-collapse:collapse;">
+    <table class="table table-bordered">
         <thead>
         <tr>
-            <th><strong>Order.No</strong></th>
-            <th><strong>Burst</strong></th>
-            <th><strong>Waist</strong></th>
-            <th><strong>Hips</strong></th>
-            <th><strong>Back Width</strong></th>
-            <th><strong>Front chest</strong></th>
-            <th><strong>Shoulder</strong></th>
-            <th><strong>Neck Size</strong></th>
-            <th><strong>Sleeve</strong></th>
-            <th><strong>Under Burst</strong></th>
-            <th><strong>Wrist</strong></th>
-            <th><strong>Upper Arm</strong></th>
-            <th><strong>Calf</strong></th>
-            <th><strong>Ankle</strong></th>
-            <th><strong>Nape to waist</strong></th>
-            <th><strong>Waist to hip</strong></th>
-            <th><strong>Front shoulder to waist</strong></th>
-            <th><strong>Outside Leg</strong></th>
-            <th><strong>Inside Legs</strong></th>
-            <th><strong>Edit</strong></th>
-            <th><strong>Delete</strong></th>
+            <th>Order.No</th>
+            <th>Burst</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Back Width</th>
+            <th>Front chest</th>
+            <th>Shoulder</th>
+            <th>Neck Size</th>
+            <th>Sleeve</th>
+            <th>Under Burst</th>
+            <th>Wrist</th>
+            <th>Upper Arm</th>
+            <th>Calf</th>
+            <th>Ankle</th>
+            <th>Nape to waist</th>
+            <th>Waist to hip</th>
+            <th>Front shoulder to waist</th>
+            <th>Outside Leg</th>
+            <th>Inside Legs</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>veiw pictures</th>
         </tr>
         </thead>
         <tbody>
@@ -48,29 +50,32 @@ include('dashboard.php')
         $result = mysqli_query($con,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
             <tr><td align="center"><?php echo $count; ?></td>
-                <td align="center"><?php echo $row["burst"]; ?></td>
-                <td align="center"><?php echo $row["waist"]; ?></td>
-                <td align="center"><?php echo $row["hips"]; ?></td>
-                <td align="center"><?php echo $row["backwidth"]; ?></td>
-                <td align="center"><?php echo $row["frontchest"]; ?></td>
-                <td align="center"><?php echo $row["shoulder"]; ?></td>
-                <td align="center"><?php echo $row["neck"]; ?></td>
-                <td align="center"><?php echo $row["sleeve"]; ?></td>
-                <td align="center"><?php echo $row["underburst"]; ?></td>
-                <td align="center"><?php echo $row["wrist"]; ?></td>
-                <td align="center"><?php echo $row["upperarm"]; ?></td>
-                <td align="center"><?php echo $row["calf"]; ?></td>
-                <td align="center"><?php echo $row["ankle"]; ?></td>
-                <td align="center"><?php echo $row["napewaist"]; ?></td>
-                <td align="center"><?php echo $row["waisthip"]; ?></td>
-                <td align="center"><?php echo $row["shoulderwaist"]; ?></td>
-                <td align="center"><?php echo $row["outsideleg"]; ?></td>
-                <td align="center"><?php echo $row["insideleg"]; ?></td>
-                <td align="center">
-                    <a href="edit.php?id=<?php echo $row[">Edit</a>
+                <td ><?php echo $row["burst"]; ?></td>
+                <td ><?php echo $row["waist"]; ?></td>
+                <td ><?php echo $row["hips"]; ?></td>
+                <td ><?php echo $row["backwidth"]; ?></td>
+                <td ><?php echo $row["frontchest"]; ?></td>
+                <td ><?php echo $row["shoulder"]; ?></td>
+                <td ><?php echo $row["neck"]; ?></td>
+                <td ><?php echo $row["sleeve"]; ?></td>
+                <td ><?php echo $row["underburst"]; ?></td>
+                <td ><?php echo $row["wrist"]; ?></td>
+                <td ><?php echo $row["upperarm"]; ?></td>
+                <td ><?php echo $row["calf"]; ?></td>
+                <td ><?php echo $row["ankle"]; ?></td>
+                <td ><?php echo $row["napewaist"]; ?></td>
+                <td ><?php echo $row["waisthip"]; ?></td>
+                <td ><?php echo $row["shoulderwaist"]; ?></td>
+                <td ><?php echo $row["outsideleg"]; ?></td>
+                <td ><?php echo $row["insideleg"]; ?></td>
+                <td >
+                    <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                 </td>
                 <td align="center">
-                    <a href="delete.php?id=<?php echo $row[">Delete</a>
+                    <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                </td>
+                <td>
+                    <a href="upload/<?php echo $row['filename']; ?>" target="_blank">design veiw</a>
                 </td>
             </tr>
             <?php $count++; } ?>

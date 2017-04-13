@@ -20,7 +20,7 @@ $status = "";
     ('$trn_date','$name','$age','$submittedby')";
         mysqli_query($con, $ins_query) or die(mysqli_error());
         $status = "New Record Inserted Successfully.
-    </br></br><a href='../view.php'>View Inserted Record</a>";
+    </br></br><a href='../../CMM007_LabWork/course/view.php'>View Inserted Record</a>";
     }
 
 ?>
@@ -42,7 +42,7 @@ $status = "";
 <body>
 <div class="form-inline">
     <p><a href="../dashboard.php">Dashboard</a>
-        | <a href="../view.php">View Records</a>
+        | <a href="../../CMM007_LabWork/course/view.php">View Records</a>
         | <a href="../logout.php">Logout</a></p>
     <div class="form-group">
         <h1>Please Insert Your Measurements</h1>
