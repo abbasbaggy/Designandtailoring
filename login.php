@@ -24,8 +24,12 @@ session_start();
 if (isset($_POST['username'])){
 
     $username = stripslashes($_REQUEST['username']); // removes backslashes
+    $username = strip_tags($username);
+    $usename = htmlspecialchars($username);
     $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
     $password = stripslashes($_REQUEST['password']);
+    $password = strip_tags($password);
+    $password = htmlspecialchars($password);
     $password = mysqli_real_escape_string($con,$password);
 
     //Checking is user existing in the database or not
