@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
     if($filename != '')
     {
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        $allowed = ['png', 'jpg', 'jpeg',  'gif'];
+        $allowed = ['png', 'jpg','JPG', 'jpeg',  'gif'];
 
         //check if file type is valid
         if (in_array($ext, $allowed))
