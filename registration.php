@@ -20,28 +20,29 @@
 <?php    ini_set('display_errors', 1);
 require('db.php');
 // If form submitted, insert values into the database.
-if (isset($_REQUEST['username'])){
+if (isset($_REQUEST['username'])) {
     $username = stripslashes($_REQUEST['username']); // removes backslashes
-    $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
+    $username = mysqli_real_escape_string($con, $username); //escapes special characters in a string
     $email = stripslashes($_REQUEST['email']);
-    $email = mysqli_real_escape_string($con,$email);
+    $email = mysqli_real_escape_string($con, $email);
     $password = stripslashes($_REQUEST['password']);
-    $password = mysqli_real_escape_string($con,$password);
+    $password = mysqli_real_escape_string($con, $password);
 
-if ( !filter_var($email,FILTER_VALIDATE_EMAIL)) {
-    $error = true;
-    $emailError = "Please enter valid email address.";
-} else {
-    //check email
-    $sql_query = "SELECT userEmail FROM users WHERE userEmail ='$email'";
-    $result = $con->query($sql_query);
-    $count = $result->num_rows;
-    if ($count != 0) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = true;
-        $emailError = "Provided Email is already in use.";
+        $emailError = "Please enter valid email address.";
+    } else {
+        //check email
+        $sql_query = "SELECT userEmail FROM users WHERE userEmail ='$email'";
+        $result = $con->query($sql_query);
+        $count = $result->num_rows;
+        if ($count != 0) {
+            $error = true;
+            $emailError = "Provided Email is already in use.";
+        }
     }
 }
-
+if(!$error){
     $trn_date = date("Y-m-d H:i:s");
     $query = "INSERT into `users2` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
     $result = mysqli_query($con,$query);
