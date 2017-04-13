@@ -50,6 +50,7 @@ include('dashboard.php')
         $result = mysqli_query($con,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
             <tr><td align="center"><?php echo $count; ?></td>
+                <td><?php echo $row["idname"]; ?></td>
                 <td ><?php echo $row["burst"]; ?></td>
                 <td ><?php echo $row["waist"]; ?></td>
                 <td ><?php echo $row["hips"]; ?></td>

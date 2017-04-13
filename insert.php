@@ -12,6 +12,7 @@ $status = "";
 
     if (isset($_POST['new']) && $_POST['new'] == 1) {
         $trn_date = date("Y-m-d H:i:s");
+        $idname= $_REQUEST['idname'];
         $burst = $_REQUEST['Burst'];
         $waist = $_REQUEST['Waist'];
         $hips = $_REQUEST['Hips'];
@@ -33,7 +34,7 @@ $status = "";
 
         $submittedby = $_SESSION["username"];
         $ins_query = "insert into new_record
-    (`trn_date`,`burst`,`waist`,`hips`,`backwidth`,`frontchest`,`shoulder`,`neck`,`sleeve`,`underburst`,`wrist`,`upperarm`,`calf`,`ankle`,`napewaist`,`waisthip`,`shoulderwaist`,`outsideleg`,`insideleg`,`submittedby`)values
+    (`trn_date`,`idname`,`burst`,`waist`,`hips`,`backwidth`,`frontchest`,`shoulder`,`neck`,`sleeve`,`underburst`,`wrist`,`upperarm`,`calf`,`ankle`,`napewaist`,`waisthip`,`shoulderwaist`,`outsideleg`,`insideleg`,`submittedby`)values
     ('$trn_date','$burst','$waist','$hips','$backWidth','$frontChest','$shoulder','$neck','$sleeve','$underBurst','$wristt','$upperArm','$calf','$ankle','$napeWaist','$waistHip','$shoulderWaist','$outsideLeg','$insideLeg','$submittedby')";
         mysqli_query($con, $ins_query) or die(mysqli_error());
         $status = "New Record Inserted Successfully.
@@ -60,8 +61,8 @@ include ('dashboard.php');
                <img src="css/measurementchart2.jpg" class="img-thumbnail" width="350" height="275">
 
                <div class="form-group" name="form2" method="" action="">
-                   <label for="rqst">Please Label your order</label>
-                   <input type="text" name="request name" placeholder="order label" required id="rqst">
+                   <label for="idname">Please Label your order</label>
+                   <input type="text" name="request name" placeholder="order label" required id="idname">
                </div>
 
                <input type="hidden" name="new" value="1" />
