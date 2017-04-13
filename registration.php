@@ -34,7 +34,7 @@ if ( !filter_var($email,FILTER_VALIDATE_EMAIL)) {
 } else {
     //check email
     $sql_query = "SELECT userEmail FROM users WHERE userEmail ='$email'";
-    $result = $link->query($sql_query);
+    $result = $con->query($sql_query);
     $count = $result->num_rows;
     if($count!=0){
         $error = true;
