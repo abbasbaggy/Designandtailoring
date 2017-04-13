@@ -1,8 +1,11 @@
 <?php
 include_once 'db.php';
+include 'auth.php';
+
+$username = $_SESSION['username'];
 
 // fetch files
-$sql = "select filename from tbl_files";
+$sql = "select filename from tbl_files WHERE username = `$username`";
 $result = mysqli_query($con, $sql);
 ?>
 
