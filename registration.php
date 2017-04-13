@@ -19,6 +19,8 @@
 <body>
 <?php    ini_set('display_errors', 1);
 require('db.php');
+
+$error = false;
 // If form submitted, insert values into the database.
 if (isset($_REQUEST['username'])){
     $username = stripslashes($_REQUEST['username']); // removes backslashes
@@ -40,7 +42,7 @@ if ( !filter_var($email,FILTER_VALIDATE_EMAIL)) {
         $error = true;
         $emailError = "Provided Email is already in use.";
     }
-    if (!$error) {
+    elseif (!$error) {
         $trn_date = date("Y-m-d H:i:s");
         $query = "INSERT into `users2` (username, password, email, trn_date) VALUES ('$username', '" . md5($password) . "', '$email', '$trn_date')";
         $result = mysqli_query($con, $query);
