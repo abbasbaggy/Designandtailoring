@@ -37,7 +37,7 @@ $status = "";
     ('$trn_date','$burst','$waist','$hips','$backWidth','$frontChest','$shoulder','$neck','$sleeve','$underBurst','$wristt','$upperArm','$calf','$ankle','$napeWaist','$waistHip','$shoulderWaist','$outsideLeg','$insideLeg','$submittedby')";
         mysqli_query($con, $ins_query) or die(mysqli_error());
         $status = "New Record Inserted Successfully.
-    </br></br><a href='../../Designandtailoring/css/admin/view.php'>View Inserted Record</a>";
+    </br></br><a href='view.php'>View Inserted Record</a>";
     }
 
 
