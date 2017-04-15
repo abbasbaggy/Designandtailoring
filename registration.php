@@ -25,7 +25,8 @@ if (isset($_REQUEST['username'])){
     $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
     $email = stripslashes($_REQUEST['email']);
     $email = mysqli_real_escape_string($con,$email);
-    $password = stripslashes($_REQUEST['password']);
+    $pass = stripslashes($_REQUEST['password']);
+    $password= hash(sha256, $pass);
     $password = mysqli_real_escape_string($con,$password);
 
     $trn_date = date("Y-m-d H:i:s");

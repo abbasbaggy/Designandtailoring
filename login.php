@@ -27,9 +27,10 @@ if (isset($_POST['username'])){
     $username = strip_tags($username);
     $username = htmlspecialchars($username);
     $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
-    $password = stripslashes($_REQUEST['password']);
-    $password = strip_tags($password);
-    $password = htmlspecialchars($password);
+    $pass = stripslashes($_REQUEST['password']);
+    $pass = strip_tags($pass);
+    $pass = htmlspecialchars($pass);
+    $password= hash(sha256,$pass);
     $password = mysqli_real_escape_string($con,$password);
 
     //Checking is user existing in the database or not
