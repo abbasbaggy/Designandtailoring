@@ -39,29 +39,17 @@ if (isset($_POST['username'])){
     if($rows==1){
         $_SESSION['username'] = $username;
         header("Location: index.php"); // Redirect user to index.php
-    }else{
+    }elseif($username="Abbas" && $password="baggy"){
+        $_SESSION['username'] = $username;
+        header("location: admin/view.php");
+    }
+
+
+    else{
         echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
     }
 
-}
-
-    elseif ($_POST['username'] && $_POST['password']) {
-        $usernam = stripslashes($_REQUEST['username']); // removes backslashes
-        $usernam = strip_tags($username);
-        $usernam = htmlspecialchars($username);
-        $usernam = mysqli_real_escape_string($con,$username); //escapes special characters in a string
-        $passwor = stripslashes($_REQUEST['password']);
-        $passwor = strip_tags($password);
-        $passwor = htmlspecialchars($password);
-        $passwor = mysqli_real_escape_string($con,$password);
-        if ($usernam="Abbas" & $passwor="baggy") {
-
-            $_SESSION['username'] = $usernam;
-            header("location: admin/view.php");
-        }
-        }
-
-else{
+} else{
     ?>
     <div class="form">
         <h1>Log In</h1>
