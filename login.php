@@ -36,15 +36,10 @@ if (isset($_POST['username'])){
     $query = "SELECT * FROM `users2` WHERE username='$username' and password='".md5($password)."'";
     $result = mysqli_query($con,$query) or die(mysqli_error());
     $rows = mysqli_num_rows($result);
-    if($rows==1){
+    if($rows==1) {
         $_SESSION['username'] = $username;
         header("Location: index.php"); // Redirect user to index.php
-    }elseif($username="Abbas" && $password="baggy"){
-        $_SESSION['username'] = $username;
-        header("location: admin/view.php");
     }
-
-
     else{
         echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
     }
