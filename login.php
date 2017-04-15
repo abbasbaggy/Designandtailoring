@@ -45,7 +45,7 @@ if (isset($_POST['username'])){
 
 }
 
-    elseif ($_POST['username']='Abbas' && $_POST['password']='baggy') {
+    elseif ($_POST['username'] && $_POST['password']) {
         $usernam = stripslashes($_REQUEST['username']); // removes backslashes
         $usernam = strip_tags($username);
         $usernam = htmlspecialchars($username);
@@ -54,10 +54,12 @@ if (isset($_POST['username'])){
         $passwor = strip_tags($password);
         $passwor = htmlspecialchars($password);
         $passwor = mysqli_real_escape_string($con,$password);
+        if ($usernam="Abbas" & $passwor="baggy") {
 
-    $_SESSION['username']= $usernam;
-        header("location: admin/view.php");
-    }
+            $_SESSION['username'] = $usernam;
+            header("location: admin/view.php");
+        }
+        }
 
 else{
     ?>
