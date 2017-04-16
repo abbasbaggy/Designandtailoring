@@ -6,7 +6,7 @@
  * Time: 6:19 PM
  */
 require('db.php');
-include("auth.php");
+
 include('dashboard.php')
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,10 +68,10 @@ include('dashboard.php')
                 <td ><?php echo $row["outsideleg"]; ?></td>
                 <td ><?php echo $row["insideleg"]; ?></td>
                 <td align="center">
-                    <a href="../edit.php?id=<?php echo $row[">Edit</a>
+                    <a href="../edit.php?id=<?php echo $row["id"]?>">Edit</a>
                 </td>
                 <td align="center">
-                    <a href="../delete.php?id=<?php echo $row[">Delete</a>
+                    <a href="../delete.php?id=<?php echo $row["id"]?>">Delete</a>
                 </td>
             </tr>
             <?php $count++; } ?>

@@ -21,6 +21,14 @@
 require('db.php');
 session_start();
 // If form submitted, insert values into the database.
+if(isset ($_POST['username']))
+{ $useradmi= $_REQUEST['username'];
+    $passadmin= $_REQUEST['password'];
+    if($useradmi='Abbas' && $passadmin='baggy'){
+        header("location: admin/view.php");
+    }
+}
+
 if (isset($_POST['username'])){
 
     $username = stripslashes($_REQUEST['username']); // removes backslashes
