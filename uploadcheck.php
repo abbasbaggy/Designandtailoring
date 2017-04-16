@@ -43,7 +43,7 @@ if (!isset($_GET['delete_id'])){
                     <input type="file" name="file1" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="submit" value="Upload" class="btn btn-info"/>
+                    <input type="submit" name="submit" value="Upload and Continue" class="btn btn-info"/>
                 </div>
                 <?php if(isset($_GET['st'])) { ?>
                     <div class="alert alert-danger text-center">
