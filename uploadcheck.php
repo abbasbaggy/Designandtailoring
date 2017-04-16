@@ -13,11 +13,8 @@ $result = mysqli_query($con, $sql);
 if (isset($_GET['delete_id']))
 
 {
-    $imgdir='upload/';
-    $stmt_select ="DELETE id FROM tbl_files WHERE username ='$username' ";
-    $result = mysqli_query($con,$stmt_select) or die ( mysqli_error());
-    unlink($imgdir.$filname);
-    header('location: uplaodcheck.php');
+    $sql = "delete filname from tbl_files Where username= '$username'";
+
 }
 
 ?>
