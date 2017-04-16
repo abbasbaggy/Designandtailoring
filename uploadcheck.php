@@ -12,7 +12,7 @@ if (!isset($_GET['delete_id'])){
     $imagedir= $row['filename'];
 
     $sql="delete from tbl_files Where filname ='$imagedir' AND usename='$username'";
-    $result =mysqli_query($con, $sql);
+
 
 }
 
