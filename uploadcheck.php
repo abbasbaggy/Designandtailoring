@@ -13,7 +13,7 @@ $result = mysqli_query($con, $sql);
 if (isset($_GET['delete_id']))
 
 {
-    $sql = "delete filename from tbl_files Where username= '$username'";
+    $sql = "delete from tbl_files Where username= '$username'";
 
 }
 
