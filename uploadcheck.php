@@ -7,12 +7,24 @@ $username = $_SESSION['username'];
 // fetch files
 $sql = "select filename from tbl_files WHERE username = '$username'";
 $result = mysqli_query($con, $sql);
+
+?>
+<?php
+if (isset($_GET['delete_id']))
+
+{
+    $imgdir='upload/';
+    $stmt_select ="DELETE id FROM tbl_files WHERE username ='$username' ";
+    $result = mysqli_query($con,$stmt_select) or die ( mysqli_error());
+    unlink($imgdir.$filname);
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload View & Download file in PHP and MySQL | Demo</title>
+    <title>picture upload</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

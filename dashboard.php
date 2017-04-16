@@ -33,7 +33,7 @@ include("auth.php"); //include auth.php file on all secure pages ?>
 </div>
 <ul class="nav navbar-nav">
     <li class="active"><a href="index.php">Home</a></li>
-    <li><a href="insert.php">Insert New Records</a></li>
+    <li><a href="insert.php">Make Order</a></li>
     <li><a href="view.php">View Your Order</a></li>
     <li><a href="uploadcheck.php">uploadcheck</a></li>
 
