@@ -5,7 +5,7 @@
  * Date: 3/31/2017
  * Time: 6:19 PM
  */
-require('db.php');
+require('../db.php');
 
 include('dashboard.php')
 ?>
