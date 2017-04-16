@@ -81,7 +81,7 @@ if (isset($_GET['delete_id']))
                         <td><?php echo $row['filename']; ?></td>
                         <td><a href="upload/<?php echo $row['filename']; ?>" target="_blank">View</a></td>
                         <td><a href="upload/<?php echo $row['filename']; ?>" download>Download</td>
-                        <td><a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"</td>
+                        <td><a class="btn btn-danger" href="?delete_id=<?php echo $row['filname']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"</td>
                     </tr>
                 <?php } ?>
                 </tbody>
