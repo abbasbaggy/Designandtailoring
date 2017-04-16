@@ -17,6 +17,7 @@ if (isset($_GET['delete_id']))
     $stmt_select ="DELETE id FROM tbl_files WHERE username ='$username' ";
     $result = mysqli_query($con,$stmt_select) or die ( mysqli_error());
     unlink($imgdir.$filname);
+    header('location: uplaodcheck.php');
 }
 
 ?>
