@@ -43,7 +43,7 @@ if (isset($_POST['submit']))
             // insert file details into database
             $sql = "INSERT INTO tbl_files(filename, created, username) VALUES('$filename', '$created', '$username')";
             mysqli_query($con, $sql);
-            header("Location: uploadcheck.php?st=success");
+            header("Location: insert.php?st=success");
         }
         else
         {
