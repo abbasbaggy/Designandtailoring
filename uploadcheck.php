@@ -8,16 +8,16 @@ $username = $_SESSION['username'];
 $sql = "select filename from tbl_files WHERE username = '$username'";
 $result = mysqli_query($con, $sql);
 
-?>
-<?php
-if (isset($_GET['delete_id']))
+if (!isset($_GET['delete_id'])){
+    $imagedir= $row['filename'];
 
-{
-    $sql = "delete from tbl_files Where username= '$username'";
-
+    $sql="delete from tbl_files Where filname ='$imagedir' AND usename='$username'";
+    $result =mysqli_query($con, $sql);
+    unlink($imagedir);
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
