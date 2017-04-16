@@ -19,6 +19,7 @@ include('dashboard.php')
         <thead>
         <tr>
             <th>Order.No</th>
+            <th>Username</th>
             <th>Burst</th>
             <th>Waist</th>
             <th>Hips</th>
@@ -49,6 +50,7 @@ include('dashboard.php')
         $result = mysqli_query($con,$sel_query);
         while($row = mysqli_fetch_assoc($result)) { ?>
             <tr><td align="center"><?php echo $count; ?></td>
+                <td><?php echo $row["submittedby"]; ?></td>
                 <td ><?php echo $row["burst"]; ?></td>
                 <td ><?php echo $row["waist"]; ?></td>
                 <td ><?php echo $row["hips"]; ?></td>
