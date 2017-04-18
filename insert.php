@@ -62,7 +62,7 @@ include ('dashboard.php');
 
                <div class="form-group" name="form2" method="" action="">
                    <label for="idname">Please Label your order</label>
-                   <input type="text" name="request name" placeholder="order label" required id="idname">
+                   <input type="text" name="idname" placeholder="order label" required id="idname">
                </div>
 
                <input type="hidden" name="new" value="1" />
