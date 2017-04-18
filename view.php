@@ -15,7 +15,7 @@ include('dashboard.php')
 
     <div class="">
     <h2>View Records</h2>
-        <div class="table-responsive"
+        <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
         <tr>
