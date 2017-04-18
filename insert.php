@@ -35,7 +35,7 @@ $status = "";
         $submittedby = $_SESSION["username"];
         $ins_query = "insert into new_record
     (`trn_date`,`idname`,`burst`,`waist`,`hips`,`backwidth`,`frontchest`,`shoulder`,`neck`,`sleeve`,`underburst`,`wrist`,`upperarm`,`calf`,`ankle`,`napewaist`,`waisthip`,`shoulderwaist`,`outsideleg`,`insideleg`,`submittedby`)values
-    ('$trn_date','$burst','$waist','$hips','$backWidth','$frontChest','$shoulder','$neck','$sleeve','$underBurst','$wristt','$upperArm','$calf','$ankle','$napeWaist','$waistHip','$shoulderWaist','$outsideLeg','$insideLeg','$submittedby')";
+    ('$trn_date','$idname','$burst','$waist','$hips','$backWidth','$frontChest','$shoulder','$neck','$sleeve','$underBurst','$wristt','$upperArm','$calf','$ankle','$napeWaist','$waistHip','$shoulderWaist','$outsideLeg','$insideLeg','$submittedby')";
         mysqli_query($con, $ins_query) or die(mysqli_error());
         $status = "New Record Inserted Successfully.
     </br></br><a href='view.php'>View Inserted Record</a>";
