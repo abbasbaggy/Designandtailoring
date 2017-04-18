@@ -13,7 +13,7 @@ include('dashboard.php')
 <body>
 <main>
 
-    <div class="container">
+    <div class="">
     <h2>View Records</h2>
         <div class="table-responsive">
     <table class="table">
