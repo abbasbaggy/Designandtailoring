@@ -59,34 +59,6 @@ if (!isset($_GET['delete_id'])){
             </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>File Name</th>
-                    <th>View</th>
-                    <th>Download</th>
-                    <th>delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $i = 1;
-                while($row = mysqli_fetch_array($result)) { ?>
-                    <tr>
-                        <td><?php echo $i++; ?></td>
-                        <td><?php echo $row['filename']; ?></td>
-                        <td><a href="upload/<?php echo $row['filename']; ?>" target="_blank">View</a></td>
-                        <td><a href="upload/<?php echo $row['filename']; ?>" download>Download</td>
-                        <td><a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"</td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 </div>
 </main>
