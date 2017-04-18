@@ -81,7 +81,8 @@ include('dashboard.php');
                     <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
                 </td>
                 <td>
-                 <?php   $sql2 = "select filename from tbl_files WHERE username = '$username'";
+                 <?php  $username = $_SESSION["username"];
+                 $sql2 = "select filename from tbl_files WHERE username = '$username'";
                     $result2 = mysqli_query($con, $sql2);
                     $row2 = mysqli_fetch_assoc($result2); ?>
                     <a href="upload/<?php echo $row2['filename']; ?>" target="_blank">design veiw</a>
