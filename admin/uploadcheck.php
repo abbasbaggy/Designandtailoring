@@ -9,14 +9,14 @@ $sql = "SELECT * FROM tbl_files";
 $result = mysqli_query($con, $sql);
 
 if (!isset($_GET['delete_id'])) {
-    $imagedir = $_GET['delete_id'];
+    $id = $_GET['delete_id'];
 
     $row2 = mysqli_fetch_array($result);
    $row2= ['filanme'];
    $row3= "../upload/$row2";
    unlink ($row3);
 
-    $sql = "delete from tbl_files Where filname ='$imagedir' AND usename='$username'";
+    $sql = "delete from tbl_files Where id='$id'";
     $resu = mysqli_query($con, $sql);
 
 }
