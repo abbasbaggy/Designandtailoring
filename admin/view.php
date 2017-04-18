@@ -13,8 +13,9 @@ include('dashboard.php')
 <body>
 <main>
 
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="container">
     <h2>View Records</h2>
+        <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -79,6 +80,7 @@ include('dashboard.php')
             <?php $count++; } ?>
         </tbody>
     </table>
+            </div>
 </div>
 </main>
 </body>
