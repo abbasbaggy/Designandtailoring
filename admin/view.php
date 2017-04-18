@@ -41,15 +41,16 @@ include('dashboard.php')
             <th>Inside Legs</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>veiw Sketch</th>
         </tr>
         </thead>
         <tbody>
         <?php
-        $veiwby =$_SESSION["username"];
+
         $count=1;
         $sel_query="Select * from new_record ORDER BY id desc;";
         $result = mysqli_query($con,$sel_query);
-        while($row = mysqli_fetch_assoc($result)) { ?>
+        while($row = mysqli_fetch_assoc($result)) {  $users=$row["submittedby"]; ?>
             <tr><td align="center"><?php echo $count; ?></td>
                 <td><?php echo $row["submittedby"]; ?></td>
                 <td ><?php echo $row["burst"]; ?></td>
@@ -75,6 +76,13 @@ include('dashboard.php')
                 </td>
                 <td align="center">
                     <a href="../delete.php?id=<?php echo $row["id"]?>">Delete</a>
+                </td>
+                <td>
+                    <?php  $username = $users;
+                    $sql2 = "select filename from tbl_files WHERE username = '$username'";
+                    $result2 = mysqli_query($con, $sql2);
+                    $row2 = mysqli_fetch_assoc($result2); ?>
+                    <a href="upload/<?php echo $row2['filename']; ?>" target="_blank">design veiw</a>
                 </td>
             </tr>
             <?php $count++; } ?>
