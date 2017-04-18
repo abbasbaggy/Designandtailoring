@@ -60,12 +60,13 @@ include ('dashboard.php');
            <div class="form-group">
                <img src="css/measurementchart2.jpg" class="img-thumbnail" width="350" height="275">
 
+
+
+               <input type="hidden" name="new" value="1" />
                <div class="form-group" name="form2" method="" action="">
                    <label for="idname">Please Label your order</label>
                    <input type="text" name="idname" placeholder="order label" required id="idname">
                </div>
-
-               <input type="hidden" name="new" value="1" />
 <p>
             <input type="text" name="Burst" placeholder="Enter Burst size "  />
             <input type="text" name="Waist" placeholder="Enter Waist size"  />
