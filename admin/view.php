@@ -16,7 +16,7 @@ include('dashboard.php')
     <div class="container">
     <h2>View Records</h2>
         <div class="table-responsive">
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
         <tr>
             <th>Order.No</th>
