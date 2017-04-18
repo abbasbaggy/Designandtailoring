@@ -25,6 +25,7 @@ if(isset ($_POST['username']))
 { $useradmi= $_REQUEST['username'];
     $passadmin= $_REQUEST['password'];
     if($useradmi='Abbas' && $passadmin='baggy'){
+        $_SESSION['username']= "Admin";
         header("location: admin/view.php");
     }
 }
