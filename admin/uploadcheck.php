@@ -16,8 +16,8 @@ if (!isset($_GET['delete_id'])) {
    $row3= "../upload/$row2";
    unlink ($row3);
 
-    $sql = "delete from tbl_files Where id='$id'";
-    $resu = mysqli_query($con, $sql);
+    $sql2 = "delete from tbl_files Where id='$id'";
+    $resu = mysqli_query($con, $sql2);
 
 }
 ?>
