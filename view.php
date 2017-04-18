@@ -48,7 +48,7 @@ include('dashboard.php');
         <?php
         $veiwby =$_SESSION["username"];
 
-        $sql = "select filename from tbl_files WHERE username = '$username'";
+        $sql2 = "select filename from tbl_files WHERE username = '$username'";
         $result2 = mysqli_query($con, $sql);
         $row2 = mysqli_fetch_assoc($result2);
 
