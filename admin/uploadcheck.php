@@ -5,7 +5,7 @@ include 'auth.php';
 $username = $_SESSION['username'];
 
 // fetch files
-$sql = "select filename from tbl_files";
+$sql = "SELECT * FROM tbl_files";
 $result = mysqli_query($con, $sql);
 
 
