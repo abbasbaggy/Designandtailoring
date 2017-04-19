@@ -11,7 +11,7 @@ $result = mysqli_query($con, $sql);
 if (!isset($_GET['delete_id'])) {
     $id = $_GET['filename'];
 
-    $id2= '../upload/$id';
+    $id2= "../upload/$id";
    unlink ($id2);
 
     $sql2 = "delete from tbl_files Where filename='$id'";
