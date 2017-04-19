@@ -34,6 +34,11 @@
 </script>
 </head>
 <body>
+<header>
+    <?php include("dashboard.php"); ?>
+</header>
+
+<main>
 <div id="container">
 	<div class="page_content">
 Page Content Here....
@@ -49,5 +54,6 @@ Page Content Here....
     Loading comments...
     <div>
 </div>
+    </main>
 </body>
 </html>
