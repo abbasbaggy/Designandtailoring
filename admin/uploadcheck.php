@@ -9,12 +9,12 @@ $sql = "SELECT * FROM tbl_files";
 $result = mysqli_query($con, $sql);
 
 if (!isset($_GET['delete_id'])) {
-    $id = $_GET['filname'];
+    $id = $_GET['filename'];
 
     $id2= '../upload/$id';
    unlink ($id2);
 
-    $sql2 = "delete from tbl_files Where filname='$id'";
+    $sql2 = "delete from tbl_files Where filename='$id'";
     $resu = mysqli_query($con, $sql2);
 
     echo "success";
