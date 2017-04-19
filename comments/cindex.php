@@ -41,7 +41,7 @@
 <main>
 <div id="container">
 	<div class="page_content">
-Page Content Here....
+<h3>Exclusive Fashion Blog</h3>
     </div>
     <div class="comment_input">
         <form name="form1">

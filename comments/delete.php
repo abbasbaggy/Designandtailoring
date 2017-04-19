@@ -6,7 +6,7 @@
  * Time: 3:12 PM
  */
 
-require("db/db.php");
+require("../db.php");
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];

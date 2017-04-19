@@ -9,15 +9,15 @@ $sql = "SELECT * FROM tbl_files";
 $result = mysqli_query($con, $sql);
 
 if (!isset($_GET['delete_id'])) {
-    $id = $_GET['delete_id'];
+    $id = $_GET['filname'];
 
-    $row2 = mysqli_fetch_array($result);
-   $row2= ['filanme'];
-   $row3= "../upload/$row2";
-   unlink ($row3);
+    $id2= '../upload/$id';
+   unlink ($id2);
 
-    $sql2 = "delete from tbl_files Where id='$id'";
+    $sql2 = "delete from tbl_files Where filname='$id'";
     $resu = mysqli_query($con, $sql2);
+
+    echo "success";
 
 }
 ?>
@@ -84,7 +84,7 @@ if (!isset($_GET['delete_id'])) {
                             <td><?php echo $row['filename']; ?></td>
                             <td><a href="../upload/<?php echo $row['filename']; ?>" target="_blank">View</a></td>
                             <td><a href="../upload/<?php echo $row['filename']; ?>" download>Download</td>
-                            <td><a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"</td>
+                            <td><a class="btn btn-danger" href="?delete_id=<?php echo $row['filename']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"</td>
                         </tr>
                     <?php } ?>
                     </tbody>

@@ -11,7 +11,7 @@ $name = $_REQUEST['name'];
 $comments = $_REQUEST['comments'];
 
 
-require("db/db.php");
+require("../db.php");
 
 mysqli_query($con, "INSERT INTO comments(name, comments) VALUES('$name','$comments')");
 

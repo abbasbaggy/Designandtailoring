@@ -7,7 +7,7 @@
  */
 
 
-require("db/db.php");
+require("../db.php");
 $result = mysqli_query($con, "SELECT * FROM comments ORDER BY id ASC");
 while($row=mysqli_fetch_array($result)){
     echo "<div class='comments_content'>";
