@@ -35,7 +35,7 @@
 </head>
 <body>
 <header>
-    <?php include("../dashboard.php"); ?>
+    <?php include("./dashboard.php"); ?>
 </header>
 
 <main>
