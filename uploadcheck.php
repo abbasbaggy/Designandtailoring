@@ -38,7 +38,7 @@ if (!isset($_GET['delete_id'])){
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 well">
             <form action="upload.php" method="post" enctype="multipart/form-data">
-                <legend>Select File to Upload:</legend>
+                <legend>Please Upload Your Sketch:</legend>
                 <div class="form-group">
                     <input type="file" name="file1" />
                 </div>
