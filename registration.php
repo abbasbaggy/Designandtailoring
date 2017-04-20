@@ -47,6 +47,7 @@ if (isset($_REQUEST['username'])){
             <input type="password" name="password" placeholder="Password" required />
             <input type="submit" name="submit" value="Register" />
         </form>
+        <p>registered <a href='login.php'>Login Here</a></p>
 
     </div>
 <?php } ?>
