@@ -46,6 +46,7 @@ $status = "";
 <?php
 
 include ('dashboard.php');
+echo "File Uploaded Successfully!";
 ?>
 <body>
 <main>
