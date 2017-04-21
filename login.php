@@ -63,7 +63,7 @@ if (isset($_POST['username'])){
 } else{
     ?>
     <div class="form">
-        <h1><p>Design and Tailoring</p></h1>
+        <h1><p><ins>Design and Tailoring</ins></p></h1>
         <h1>Log In</h1>
         <form action="" method="post" name="login">
             <input type="text" name="username" placeholder="Username" required />
