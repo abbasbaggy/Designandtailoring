@@ -1,12 +1,6 @@
-body {
-    background-color: rgb(192, 192, 192);
-    opacity: 0.6;
 
 
-    font-family: Arial, Sans-Serif;
-
-
-}
+body {font-family:Arial, Sans-Serif;}
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 a {color:#0067ab; text-decoration:none;}
