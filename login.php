@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <style>
         body{
-        background-color:rgb(192,192,192);opacity:0.3;
+        background-color:rgb(192,192,192);opacity:1;
         }
     </style>
 
