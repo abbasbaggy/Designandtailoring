@@ -14,6 +14,9 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+    {background-color:rgb(192,192,192);opacity:0.6;}
+    </style>
 </head>
 <body>
 <main>
