@@ -15,6 +15,11 @@
     <meta charset="utf-8">
     <title>Registration</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        body{
+            background-color:rgb(192,192,192);opacity:0.9;
+        }
+    </style>
 </head>
 <body>
 <?php
