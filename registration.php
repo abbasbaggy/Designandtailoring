@@ -45,6 +45,7 @@ if (isset($_REQUEST['username'])){
 }else{
     ?>
     <div class="form">
+        <h1><p><ins>Design and Tailoring</ins></p></h1>
         <h1>Registration</h1>
         <form name="registration" action="" method="post">
             <input type="text" name="username" placeholder="Username" required />

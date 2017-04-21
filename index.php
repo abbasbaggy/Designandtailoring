@@ -25,6 +25,7 @@ include("auth.php"); //include auth.php file on all secure pages ?>
 </header>
 <main>
 <div class="form">
+    <h1><p><ins>Design and Tailoring</ins></p></h1>
     <h1><p>Welcome <?php echo $_SESSION['username']; ?>!</p></h1>
     <h2><p>Exclusive Fashion for your self</p></h2>
 
