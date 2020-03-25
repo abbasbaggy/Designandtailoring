@@ -35,7 +35,7 @@ include("auth.php"); //include auth.php file on all secure pages ?>
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
 <div class="navbar-header">
-    <a class="navbar-brand" href="index.php">Tailoring Design</a>
+    <a class="navbar-brand" href="index.php">Tailoring Design By Abasid</a>
 </div>
 <ul class="nav navbar-nav">
     <li class="active"><a href="index.php">Home</a></li>
